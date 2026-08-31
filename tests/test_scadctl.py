@@ -443,19 +443,23 @@ def test_zoom_primary_panes_makes_split_presentation_tabs_full_width(monkeypatch
     assert zoomed == ["p-front"]
 
 
-def test_pane_grid_size_uses_full_area_when_primary_pane_is_zoomed(monkeypatch) -> None:
-    snapshot = {
-        "panes": [{"pane_id": "p-front", "scroll": {"viewport_rows": 46}}],
-        "layouts": [{
-            "area": {"width": 238, "height": 48},
-            "focused_pane_id": "p-front",
-            "zoomed": True,
-            "panes": [
-                {"pane_id": "p-front", "rect": {"width": 167, "height": 48}},
-                {"pane_id": "p-diff", "rect": {"width": 71, "height": 48}},
-            ],
-        }],
+def test_pane_grid_size_uses_logical_rect_when_primary_pane_is_zoomed(monkeypatch) -> None:
+    layout = {
+        "area": {"width": 238, "height": 48},
+        "focused_pane_id": "p-front",
+        "zoomed": True,
+        "panes": [
+            {"pane_id": "p-front", "rect": {"width": 167, "height": 48}},
+            {"pane_id": "p-diff", "rect": {"width": 71, "height": 48}},
+        ],
     }
-    monkeypatch.setattr(cli, "herdr_json", lambda *_: {"snapshot": snapshot})
+    requests: list[list[str]] = []
 
-    assert cli.pane_grid_size("p-front") == (236, 46)
+    def herdr_json(args: list[str], **_: object) -> dict:
+        requests.append(args)
+        return {"layout": layout}
+
+    monkeypatch.setattr(cli, "herdr_json", herdr_json)
+
+    assert cli.pane_grid_size("p-front") == (167, 48)
+    assert requests == [["pane", "layout", "--pane", "p-front"]]

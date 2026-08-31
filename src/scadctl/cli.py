@@ -1035,31 +1035,15 @@ def herdr_socket_request(method: str, params: dict[str, Any]) -> dict[str, Any]:
 
 
 def pane_grid_size(pane_id: str) -> tuple[int, int]:
-    result = herdr_json(["api", "snapshot"])
-    snapshot = result.get("snapshot", result)
-    pane = next((item for item in snapshot.get("panes", []) if item.get("pane_id") == pane_id), None)
-    layout = next(
-        (
-            item
-            for item in snapshot.get("layouts", [])
-            if any(pane_rect.get("pane_id") == pane_id for pane_rect in item.get("panes", []))
-        ),
-        None,
-    )
-    pane_rect = next(
-        (item for item in (layout or {}).get("panes", []) if item.get("pane_id") == pane_id),
-        None,
-    )
-    rect = (
-        layout.get("area")
-        if layout and layout.get("zoomed") and layout.get("focused_pane_id") == pane_id
-        else (pane_rect or {}).get("rect")
-    )
-    if not pane or not rect:
+    result = herdr_json(["pane", "layout", "--pane", pane_id])
+    layout = result.get("layout", result)
+    pane = next((item for item in layout.get("panes", []) if item.get("pane_id") == pane_id), None)
+    rect = (pane or {}).get("rect")
+    if not rect:
         raise UserError(f"Herdr snapshot has no layout geometry for pane {pane_id}")
-    rows = int(pane.get("scroll", {}).get("viewport_rows", 0))
-    cols = max(1, int(rect["width"]) - 2)
-    if rows <= 0:
+    cols = int(rect.get("width", 0))
+    rows = int(rect.get("height", 0))
+    if cols <= 0 or rows <= 0:
         raise UserError(f"Herdr snapshot has no viewport size for pane {pane_id}")
     return cols, rows
 
