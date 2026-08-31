@@ -1,4 +1,10 @@
-# OpenSCAD workbench
+# OpenSCAD Workbench — AI modeling instructions
+
+Turn the user's natural-language part request into an editable, parametric
+OpenSCAD model and evidence-backed exports. Clarify critical missing dimensions,
+iterate on failed checks, visually inspect every required angle, and leave the
+human-facing Herdr review workspace open. A request to “make,” “design,” or
+“model” a part includes this complete workflow unless the user narrows the task.
 
 ## Modeling contract
 

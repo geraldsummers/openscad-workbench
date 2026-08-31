@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "scadctl"
 version = "0.1.0"
-description = "Deterministic OpenSCAD model build and verification CLI"
+description = "AI-assisted OpenSCAD modeling, verification, and visual inspection workbench"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.13"
