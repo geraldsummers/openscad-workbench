@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+workbench_root="$HOME/openscad-workbench"
+exec "$workbench_root/.venv/bin/python" -m scadctl "$@"
+

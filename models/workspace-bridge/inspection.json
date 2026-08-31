@@ -1,0 +1,24 @@
+{
+  "artifact_digest": "dfc42eddc82bbe91eac0c9a99c13af214e0ccfbff2c79bb4e8ffb0472c830c00",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"],
+      "id": "intended-shape",
+      "observations": "Front and rear show matching centered semicircular arch openings and two grounded legs; side views show the continuous depth; top and bottom confirm the rounded footprint and through-tunnel; both isometrics show a single continuous crown with smooth arch walls and no unintended holes, fragments, or merged features.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "Centered arch, equal-width legs, rounded outer corners, and full crown are visible without clipping or unintended openings.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear silhouette matches the front with a centered open arch and symmetric grounded legs.", "verdict": "pass"},
+    {"id": "left", "observations": "Left side shows the full rectangular depth profile with rounded vertical edges and no stray geometry.", "verdict": "pass"},
+    {"id": "right", "observations": "Right side matches the left; the body is continuous across its depth and unclipped.", "verdict": "pass"},
+    {"id": "top", "observations": "Top view shows one clean 80 by 30 mm rounded-rectangle footprint with consistent corners.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows two connected-foot regions separated by the centered through-tunnel; the visible inner arch surface is consistent with the intended opening.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "The rounded monolithic bridge, smooth centered arch, two legs, continuous crown, and through-depth opening are all clearly resolved.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Opposing isometric confirms the same continuous crown and tunnel exit with no hidden fragments or unintended holes.", "verdict": "pass"}
+  ]
+}

@@ -1,0 +1,76 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+workbench_root="$(cd "$(dirname "$0")/.." && pwd)"
+install_root="$HOME/.local/opt/openscad/2026.08.30"
+library_root="$HOME/.local/share/OpenSCAD/libraries"
+bosl_root="$library_root/BOSL2"
+bootstrap_parent="$HOME/.tmp"
+
+mkdir -p "$bootstrap_parent" "$HOME/.local/bin" "$HOME/.local/opt/openscad" "$library_root"
+export TMPDIR="$bootstrap_parent"
+bootstrap_tmp="$(mktemp -d "$bootstrap_parent/openscad-bootstrap.XXXXXX")"
+trap 'rm -rf "$bootstrap_tmp"' EXIT
+
+fetch_checked() {
+  local url="$1"
+  local expected="$2"
+  local destination="$3"
+
+  curl -fL --retry 3 --output "$destination.part" "$url"
+  printf '%s  %s\n' "$expected" "$destination.part" | sha256sum --check --status
+  mv "$destination.part" "$destination"
+}
+
+if [[ ! -x "$install_root/AppRun" ]]; then
+  appimage="$bootstrap_tmp/OpenSCAD-2026.08.30-x86_64.AppImage"
+  fetch_checked \
+    "https://files.openscad.org/snapshots/OpenSCAD-2026.08.30-x86_64.AppImage" \
+    "c28ebb99786884bd5bf7d96d03b9a058fa1a5fadb8b89dea674b7b5448986566" \
+    "$appimage"
+  chmod +x "$appimage"
+  mkdir "$bootstrap_tmp/extract"
+  (cd "$bootstrap_tmp/extract" && "$appimage" --appimage-extract >/dev/null)
+  mv "$bootstrap_tmp/extract/squashfs-root" "$install_root"
+fi
+
+deps_marker="$install_root/deps/.workbench-version"
+if [[ ! -f "$deps_marker" ]] || [[ "$(<"$deps_marker")" != "debian-trixie-glvnd-1.7.0-mesa-25.0.7" ]]; then
+  mkdir -p "$install_root/deps"
+  while IFS='|' read -r package_rel package_sha; do
+    package_file="$bootstrap_tmp/${package_rel##*/}"
+    fetch_checked "https://deb.debian.org/debian/$package_rel" "$package_sha" "$package_file"
+    dpkg-deb -x "$package_file" "$install_root/deps"
+  done <<'PACKAGES'
+pool/main/libg/libglvnd/libegl1_1.7.0-1+b2_amd64.deb|62e7bc8ccd47a60e55aad17f83d8d474310d782eb8589bbce2ab714c31712406
+pool/main/libg/libglvnd/libopengl0_1.7.0-1+b2_amd64.deb|50ea65a1141cbf6b02e41492963656ad0ba71d257cc4066ee9756bca7a6c1ac3
+pool/main/m/mesa/libegl-mesa0_25.0.7-2+deb13u1_amd64.deb|0ddebd7e91b048aac812611d6bd008343386cb140b51e5e66df74c6b6263be65
+PACKAGES
+  printf '%s\n' "debian-trixie-glvnd-1.7.0-mesa-25.0.7" >"$deps_marker"
+fi
+
+if [[ ! -f "$bosl_root/version.scad" ]] || ! grep -q 'BOSL_VERSION = \[2,0,752\]' "$bosl_root/version.scad"; then
+  if [[ -e "$bosl_root" ]]; then
+    echo "Refusing to replace the existing non-v2.0.752 BOSL2 directory: $bosl_root" >&2
+    exit 1
+  fi
+  bosl_archive="$bootstrap_tmp/bosl2.tar.gz"
+  fetch_checked \
+    "https://github.com/BelfrySCAD/BOSL2/archive/5b1f7b2d4344b75265324309e11c3c8e7f5cbb8b.tar.gz" \
+    "855fa759271923dc6bce9655fae506594130e043486e83c59b2e1dbe4912a03d" \
+    "$bosl_archive"
+  mkdir "$bootstrap_tmp/BOSL2"
+  tar -xzf "$bosl_archive" -C "$bootstrap_tmp/BOSL2" --strip-components=1
+  mv "$bootstrap_tmp/BOSL2" "$bosl_root"
+fi
+
+python3 -m venv "$workbench_root/.venv"
+"$workbench_root/.venv/bin/python" -m pip install --disable-pip-version-check -r "$workbench_root/requirements.lock"
+"$workbench_root/.venv/bin/python" -m pip install --disable-pip-version-check --no-build-isolation --no-deps -e "$workbench_root"
+
+install -m 0755 "$workbench_root/scripts/openscad-launcher" "$HOME/.local/bin/openscad"
+install -m 0755 "$workbench_root/scripts/scadctl-launcher" "$HOME/.local/bin/scadctl"
+chmod +x "$workbench_root/scripts/bootstrap" "$workbench_root/scripts/check"
+
+zsh -lic 'command -v openscad && openscad --version'
+zsh -lic 'command -v scadctl && scadctl --version'

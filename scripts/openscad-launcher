@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+openscad_root="$HOME/.local/opt/openscad/2026.08.30"
+openscad_libs="$openscad_root/deps/usr/lib/x86_64-linux-gnu:$openscad_root/usr/lib"
+
+export TMPDIR="$HOME/.tmp"
+export OPENSCADPATH="$HOME/.local/share/OpenSCAD/libraries${OPENSCADPATH:+:$OPENSCADPATH}"
+export LD_LIBRARY_PATH="$openscad_libs${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+export LIBGL_ALWAYS_SOFTWARE="${LIBGL_ALWAYS_SOFTWARE:-1}"
+
+exec "$openscad_root/AppRun" "$@"
+

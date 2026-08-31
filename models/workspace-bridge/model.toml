@@ -1,0 +1,50 @@
+schema_version = 2
+name = "workspace-bridge"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [80.0, 30.0, 24.0]
+expected_extents_tolerance_mm = 0.01
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 80 x 30 x 24 mm"
+method = "mesh"
+kind = "extents"
+expected = [80.0, 30.0, 24.0]
+tolerance = 0.01
+
+[[requirements]]
+id = "parameter-safety"
+description = "Named dimensions, corner radius, tunnel width, and crown thickness obey their constraints"
+method = "source"
+
+[[requirements]]
+id = "left-right-symmetry"
+description = "The bridge is symmetric across its left-right center plane"
+method = "mesh"
+kind = "symmetry"
+axis = "x"
+offset = 0.0
+max_difference_ratio = 0.000001
+
+[[requirements]]
+id = "open-tunnel"
+description = "A clear void passes through the full depth at the center of the bridge"
+method = "mesh"
+kind = "region"
+shape = "box"
+center = [0.0, 0.0, 5.0]
+size = [18.0, 32.0, 8.0]
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "intended-shape"
+description = "The result is one upright rounded bridge with two legs, a smooth centered arch, and no unintended features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]

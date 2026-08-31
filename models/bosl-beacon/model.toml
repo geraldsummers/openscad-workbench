@@ -1,0 +1,39 @@
+schema_version = 2
+name = "bosl-beacon"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [52.0, 52.0, 49.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 52 x 52 x 49 mm"
+method = "mesh"
+kind = "extents"
+expected = [52.0, 52.0, 49.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "bosl-parameters"
+description = "The named BOSL2 primitive and attachment dimensions obey their taper, rounding, chamfer, and overlap constraints"
+method = "source"
+
+[[requirements]]
+id = "radial-symmetry"
+description = "The beacon is symmetric across both horizontal center planes"
+method = "mesh"
+kind = "symmetry"
+axis = "x"
+offset = 0.0
+max_difference_ratio = 0.000001
+
+[[requirements]]
+id = "intended-shape"
+description = "The result is one upright beacon with a chamfered base, smooth tapered tower, spherical cap, and clean connected joints"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]

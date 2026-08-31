@@ -1,0 +1,26 @@
+{
+  "artifact_digest": "4150ccf5132909918aa7f78bf3956f8f10939b8132fd557ab3ca740cec9b28cd",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"],
+      "id": "platform-shape",
+      "observations": "Top and upper isometrics show the central 150 mm load surface and all three outrigger top faces on one plane, with three intended through-thread exits. Bottom and both underside isometrics show matching threaded entrances, continuous thread paths, and arms joined to the disk and bosses. No detached features, clipping, or unintended geometry are visible.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "The platform, arms, and outboard boss top faces share the same upper plane while remaining continuously joined.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear elevation confirms consistent 20 mm top height across the disk and bosses with continuous arm joints.", "verdict": "pass"},
+    {"id": "left", "observations": "Left elevation shows the uninterrupted platform top and outboard boss projection connected by reinforced arms.", "verdict": "pass"},
+    {"id": "right", "observations": "Right elevation agrees with the left and shows no missing, merged, or clipped outrigger features.", "verdict": "pass"},
+    {"id": "top", "observations": "The central platform remains solid while three intended threaded exits punctuate the otherwise coplanar outrigger top faces.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Three equal threaded entrances and their connecting arms are visible at 120-degree spacing beyond the disk.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Front isometric clearly resolves all three through-thread exits within boss tops flush to the central platform plane.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Rear isometric confirms the three top exits, common upper plane, and continuous arm joints.", "verdict": "pass"},
+    {"id": "isometric-underside-front", "observations": "Underside front isometric clearly shows all three threaded entrances and continuous reinforced arm junctions.", "verdict": "pass"},
+    {"id": "isometric-underside-rear", "observations": "Opposing underside isometric confirms matching threaded entrances, open paths, and no hidden fragments.", "verdict": "pass"}
+  ]
+}

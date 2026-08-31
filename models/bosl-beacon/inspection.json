@@ -1,0 +1,24 @@
+{
+  "artifact_digest": "c9395738db9ed1af4a804190bcbc19d8f6c3fb23c5bbd55f0f10f4b3f2a43079",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"],
+      "id": "intended-shape",
+      "observations": "All elevation and isometric views show one centered, upright beacon: a chamfered circular base supports a smooth tapered tower and spherical cap. Both attachment transitions are continuous, the opposing silhouettes agree, and there are no unintended holes, fragments, merged features, or clipping.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "Centered spherical cap, smooth tapered tower, and chamfered base form a clean continuous silhouette.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear elevation matches the front and confirms both attachment joints without gaps or stray geometry.", "verdict": "pass"},
+    {"id": "left", "observations": "Left elevation preserves the intended radial profile, grounded base, taper, and centered cap.", "verdict": "pass"},
+    {"id": "right", "observations": "Right elevation matches the left with no asymmetry, clipping, or missing features.", "verdict": "pass"},
+    {"id": "top", "observations": "Concentric base, tower, and spherical cap are visible; the circular stack is centered and complete.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows one uninterrupted circular base face with no holes or disconnected material.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Chamfer, rounded tapered tower transitions, spherical cap, and overlapping connected joints are clearly resolved.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Opposing isometric confirms the same centered continuous BOSL2 stack and clean rear surfaces.", "verdict": "pass"}
+  ]
+}

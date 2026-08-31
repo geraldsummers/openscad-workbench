@@ -1,0 +1,13 @@
+iniconfig==2.3.0
+lxml==6.1.2
+manifold3d==3.5.2
+networkx==3.6.1
+numpy==2.5.2
+packaging==26.3
+pillow==12.3.0
+pluggy==1.6.0
+Pygments==2.21.0
+pytest==9.1.1
+scipy==1.18.1
+setuptools==80.9.0
+trimesh==5.0.0

@@ -1,0 +1,54 @@
+schema_version = 2
+name = "leveling-stand-foot"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [40.0, 40.0, 31.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "The leveling foot is 40 x 40 x 31 mm"
+method = "mesh"
+kind = "extents"
+expected = [40.0, 40.0, 31.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "foot-parameters"
+description = "The pad, threaded shaft, connected overlap, engagement limits, and 6 mm travel obey their declared constraints"
+method = "source"
+
+[[requirements]]
+id = "upright-access"
+description = "The 40 mm thumbwheel projects 30 mm beyond the mating circular platform for upright side access"
+method = "source"
+
+[[requirements]]
+id = "flat-contact"
+description = "The underside contains a broad solid contact region"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 0.5]
+radius = 12.0
+height = 0.8
+axis = "z"
+expected = "solid"
+min_fraction = 0.999
+
+[[requirements]]
+id = "thread-profile"
+description = "The shaft has a continuous right-handed 18 mm by 2 mm trapezoidal external thread"
+method = "visual"
+views = ["front", "rear", "left", "right", "isometric-front", "isometric-rear"]
+
+[[requirements]]
+id = "foot-shape"
+description = "The part is one leveling foot with a broad flat sixteen-sided side-access thumbwheel, connected shaft, and beveled thread tip"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]

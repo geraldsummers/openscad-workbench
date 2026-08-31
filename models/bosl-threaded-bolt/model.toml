@@ -1,0 +1,36 @@
+schema_version = 2
+name = "bosl-threaded-bolt"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [32.0, 27.7128, 37.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are approximately 32 x 27.713 x 37 mm"
+method = "mesh"
+kind = "extents"
+expected = [32.0, 27.7128, 37.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "thread-parameters"
+description = "The BOSL2 external thread has an 18 mm major diameter, 3 mm pitch, at least six pitches, and a connected overlap with the head"
+method = "source"
+
+[[requirements]]
+id = "open-thread-profile"
+description = "A continuous right-handed external helical thread is visibly formed along the shaft"
+method = "visual"
+views = ["front", "rear", "left", "right", "isometric-front", "isometric-rear"]
+
+[[requirements]]
+id = "intended-shape"
+description = "The result is one upright threaded bolt demonstrator with a chamfered hex head, connected shaft, and beveled tip"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]

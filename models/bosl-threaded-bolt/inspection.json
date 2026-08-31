@@ -1,0 +1,31 @@
+{
+  "artifact_digest": "139e054b3bace424e5e5003f78611bf115fb93d44a81f6e8e4c83f7d85859575",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "isometric-front", "isometric-rear"],
+      "id": "open-thread-profile",
+      "observations": "The four elevations show evenly spaced thread crests progressing helically along the complete shaft. Both isometrics confirm a single right-handed helical ridge with normal lead start/end transitions and no merged, missing, or detached thread segments.",
+      "verdict": "pass"
+    },
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"],
+      "id": "intended-shape",
+      "observations": "All views show one upright bolt demonstrator with a grounded chamfered hex head, centered connected threaded shaft, blunt thread start at the head, and beveled top tip. Opposing views agree and show no unintended holes, fragments, clipping, or faceting defects.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "Hex head is grounded and centered beneath a clean, evenly pitched threaded shaft with a beveled tip.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear view shows the expected helical lead transitions while preserving a continuous core and connected head joint.", "verdict": "pass"},
+    {"id": "left", "observations": "Left profile shows uniform pitch, full thread depth, centered shaft, and clean head chamfers.", "verdict": "pass"},
+    {"id": "right", "observations": "Right profile agrees with the left and shows no detached crests or unintended gaps.", "verdict": "pass"},
+    {"id": "top", "observations": "Top view shows a centered circular shaft and tip within the regular chamfered hex head.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows one uninterrupted flat hexagonal head face without holes or extra geometry.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Front isometric clearly resolves the hex head, connected shaft root, repeated helical crests, and beveled tip.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Rear isometric confirms the continuous helical path and normal start/end transitions around the shaft.", "verdict": "pass"}
+  ]
+}

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+workbench_root="$(cd "$(dirname "$0")/.." && pwd)"
+check_tmp="$HOME/.tmp/openscad-workbench-check"
+mkdir -p "$check_tmp"
+TMPDIR="$HOME/.tmp" "$workbench_root/.venv/bin/python" -m pytest --basetemp="$check_tmp/pytest"
+shellcheck "$workbench_root/scripts/bootstrap" \
+  "$workbench_root/scripts/check" \
+  "$workbench_root/scripts/openscad-launcher" \
+  "$workbench_root/scripts/scadctl-launcher"
+"$workbench_root/.venv/bin/python" -m compileall -q "$workbench_root/src"
+scadctl doctor

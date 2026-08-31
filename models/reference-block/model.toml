@@ -1,0 +1,30 @@
+schema_version = 2
+name = "reference-block"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [40.0, 30.0, 12.0]
+expected_extents_tolerance_mm = 0.01
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 40 x 30 x 12 mm"
+method = "mesh"
+kind = "extents"
+expected = [40.0, 30.0, 12.0]
+tolerance = 0.01
+
+[[requirements]]
+id = "corner-radius"
+description = "The vertical edges use the declared 2 mm radius"
+method = "source"
+
+[[requirements]]
+id = "intended-shape"
+description = "The result is one upright rounded rectangular block without unintended features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scadctl"
+version = "0.1.0"
+description = "Deterministic OpenSCAD model build and verification CLI"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13"
+dependencies = [
+  "lxml==6.1.2",
+  "manifold3d==3.5.2",
+  "networkx==3.6.1",
+  "numpy==2.5.2",
+  "pillow==12.3.0",
+  "scipy==1.18.1",
+  "trimesh==5.0.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[project.urls]
+Homepage = "https://github.com/geraldsummers/openscad-workbench"
+Repository = "https://github.com/geraldsummers/openscad-workbench"
+Issues = "https://github.com/geraldsummers/openscad-workbench/issues"
+
+[project.scripts]
+scadctl = "scadctl.cli:main"
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

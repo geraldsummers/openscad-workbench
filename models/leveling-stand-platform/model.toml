@@ -1,0 +1,89 @@
+schema_version = 2
+name = "leveling-stand-platform"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [177.2243, 175.0, 20.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "The platform with integrated outriggers is approximately 177.224 x 175 x 20 mm"
+method = "mesh"
+kind = "extents"
+expected = [177.2243, 175.0, 20.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "platform-parameters"
+description = "Three fixed reinforced outriggers are spaced 120 degrees apart with valid arm joints and thread clearance"
+method = "source"
+
+[[requirements]]
+id = "adjustment-range"
+description = "The 10 to 16 mm operating engagement range provides 6 mm of adjustment"
+method = "source"
+
+[[requirements]]
+id = "outrigger-access"
+description = "The 40 mm mating thumbwheels form a 210 mm radial envelope and project 30 mm beyond the circular platform"
+method = "source"
+
+[[requirements]]
+id = "coplanar-top"
+description = "The circular platform, outrigger arms, and boss top faces share one plane around the thread openings"
+method = "source"
+
+[[requirements]]
+id = "through-threads"
+description = "Each threaded socket passes completely through its 20 mm outrigger boss"
+method = "source"
+
+[[requirements]]
+id = "open-thread-socket"
+description = "The forward outrigger boss contains a clear threaded entrance from below"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 85.0, 4.0]
+radius = 7.0
+height = 6.0
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "thread-exit"
+description = "The forward threaded socket exits through the coplanar outrigger top"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 85.0, 19.5]
+radius = 7.0
+height = 0.8
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "solid-flat-top"
+description = "The central circular platform top remains solid and uninterrupted"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 19.0]
+radius = 70.0
+height = 1.0
+axis = "z"
+expected = "solid"
+min_fraction = 0.999
+
+[[requirements]]
+id = "platform-shape"
+description = "The part is one circular flat-topped platform with three fixed reinforced outriggers, through-threaded top openings, and no unintended features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]

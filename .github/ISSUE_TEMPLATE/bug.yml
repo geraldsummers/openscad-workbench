@@ -1,0 +1,42 @@
+name: Bug report
+description: Report a reproducible problem with scadctl or the workbench
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Please remove private model data and credentials before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Commit SHA or scadctl version
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, architecture, Python, OpenSCAD, terminal, and Herdr versions as relevant
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Include the smallest safe example and exact commands.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include relevant logs with sensitive information removed.
+    validations:
+      required: true
