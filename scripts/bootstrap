@@ -69,7 +69,7 @@ python3 -m venv "$workbench_root/.venv"
 "$workbench_root/.venv/bin/python" -m pip install --disable-pip-version-check --no-build-isolation --no-deps -e "$workbench_root"
 
 install -m 0755 "$workbench_root/scripts/openscad-launcher" "$HOME/.local/bin/openscad"
-install -m 0755 "$workbench_root/scripts/scadctl-launcher" "$HOME/.local/bin/scadctl"
+ln -sfn "$workbench_root/.venv/bin/scadctl" "$HOME/.local/bin/scadctl"
 chmod +x "$workbench_root/scripts/bootstrap" "$workbench_root/scripts/check"
 
 zsh -lic 'command -v openscad && openscad --version'

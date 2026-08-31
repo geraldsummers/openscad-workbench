@@ -30,6 +30,10 @@ is on `PATH` before running `scadctl`.
 Pull requests should explain the user-visible behavior, validation performed,
 and any requirement that still depends on physical measurement or testing.
 
+The complete local check includes `scadctl doctor` and therefore expects Herdr
+and `bat`. CI uses `scripts/check --no-doctor` because it validates the portable
+CLI and render toolchain without a persistent Herdr session.
+
 ## Reporting problems
 
 Use the GitHub issue forms for reproducible bugs and feature proposals. Please

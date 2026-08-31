@@ -3,11 +3,19 @@ set -euo pipefail
 
 workbench_root="$(cd "$(dirname "$0")/.." && pwd)"
 check_tmp="$HOME/.tmp/openscad-workbench-check"
+run_doctor=true
+if [[ "${1:-}" == "--no-doctor" ]]; then
+  run_doctor=false
+elif [[ $# -gt 0 ]]; then
+  echo "Usage: scripts/check [--no-doctor]" >&2
+  exit 2
+fi
 mkdir -p "$check_tmp"
 TMPDIR="$HOME/.tmp" "$workbench_root/.venv/bin/python" -m pytest --basetemp="$check_tmp/pytest"
 shellcheck "$workbench_root/scripts/bootstrap" \
   "$workbench_root/scripts/check" \
-  "$workbench_root/scripts/openscad-launcher" \
-  "$workbench_root/scripts/scadctl-launcher"
+  "$workbench_root/scripts/openscad-launcher"
 "$workbench_root/.venv/bin/python" -m compileall -q "$workbench_root/src"
-scadctl doctor
+if $run_doctor; then
+  scadctl doctor
+fi
