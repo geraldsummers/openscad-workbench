@@ -20,7 +20,7 @@ tolerance = 0.05
 
 [[requirements]]
 id = "platform-parameters"
-description = "Three fixed reinforced outriggers are spaced 120 degrees apart with valid arm joints and thread clearance"
+description = "Three fixed reinforced outriggers are spaced 120 degrees apart with valid arm joints and 1.2 mm diametric thread clearance"
 method = "source"
 
 [[requirements]]
@@ -86,4 +86,4 @@ min_fraction = 0.999
 id = "platform-shape"
 description = "The part is one circular flat-topped platform with three fixed reinforced outriggers, through-threaded top openings, and no unintended features"
 method = "visual"
-views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

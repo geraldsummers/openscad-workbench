@@ -1,0 +1,79 @@
+{
+  "artifact_digest": "b2b72c634f022b9c6599009bb02e898317175a969f1f0945910a53112e37dabd",
+  "requirements": [
+    {
+      "confidence": 0.96,
+      "evidence_views": [
+        "front",
+        "rear",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "isometric-front",
+        "isometric-rear",
+        "isometric-underside-front",
+        "isometric-underside-rear"
+      ],
+      "id": "intended-shape",
+      "observations": "All ten rendered views show a coherent single-part obstacle component, with intentional openings, mounting/interface geometry, a stable Z=0 orientation, and no visible stray or clipped geometry.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {
+    "kind": "agent"
+  },
+  "schema_version": 2,
+  "views": [
+    {
+      "id": "front",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "rear",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "left",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "right",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "top",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "bottom",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-front",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-rear",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-underside-front",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-underside-rear",
+      "observations": "View is clear, unclipped, and consistent with the intended obstacle component geometry.",
+      "verdict": "pass"
+    }
+  ]
+}

@@ -38,6 +38,23 @@ It does not pretend that software-only checks prove printability, strength, fit,
 or safety: those claims still require slicing, material decisions, measurements,
 and physical testing.
 
+## Fabrication as research
+
+Physical prints are tracked as experiments in [`RESEARCH.md`](RESEARCH.md).
+The ledger preserves failed, mixed, successful, and pending configurations with
+their modeled dimensions and known manufacturing context. A CAD revision is not
+called successful merely because it exports or passes mesh checks: fabricated
+fit and ergonomics remain pending until a specimen is evaluated. This makes the
+workbench useful for accumulating reproducible tolerance knowledge instead of
+discarding unsuccessful iterations.
+
+CAD represents nominal design intent and assumes ideal production by default.
+Functional design clearances belong in CAD, while printer shrink compensation,
+slicer scaling, extrusion offsets, and similar production corrections stay in
+the fabrication process and research record. Material-aware geometry is allowed
+when evidence requires it, but it is treated as an explicit, documented variant
+rather than a hidden assumption in the nominal model.
+
 ## Use it with an AI agent
 
 Clone and bootstrap the workbench, then open the repository in an AI coding
@@ -113,6 +130,7 @@ or downstream validation instead of presenting them as proven.
 - `src/scadctl/` contains the CLI and verification pipeline.
 - `models/` contains example model sources, manifests, specifications, and
   completed visual inspections.
+- `RESEARCH.md` preserves physical fabrication trials and follow-up hypotheses.
 - `scripts/bootstrap` installs the pinned user-space toolchain.
 - `scripts/check` runs tests, shell checks, compilation, and environment checks.
 

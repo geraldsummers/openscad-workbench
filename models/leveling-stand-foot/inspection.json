@@ -1,5 +1,5 @@
 {
-  "artifact_digest": "4694cc5b12ae45f864430ad92e638b4f6f5692313f10148acf3c1ffef78bfc71",
+  "artifact_digest": "c2274e1060264c4967cc51912003539e554db02ecc8184e38d0541d442fe1424",
   "requirements": [
     {
       "confidence": 0.99,
@@ -10,21 +10,21 @@
     },
     {
       "confidence": 0.99,
-      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"],
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"],
       "id": "foot-shape",
-      "observations": "The part is one connected leveling foot: a centered threaded shaft overlaps a broad 40 mm sixteen-sided side-access thumbwheel, the bottom is uninterrupted and flat, the upper wheel edge is chamfered, and the thread tip is beveled. Opposing views agree with no clipping or stray geometry.",
+      "observations": "All ten views show one connected leveling foot: a centered threaded shaft overlaps a broad 40 mm eight-sided, 18 mm-tall side-access thumbwheel, the bottom is uninterrupted and flat, the upper wheel edge is chamfered, and the thread tip is beveled. Opposing views agree with no clipping or stray geometry.",
       "verdict": "pass"
     }
   ],
   "reviewer": {"kind": "agent"},
   "schema_version": 2,
   "views": [
-    {"id": "front", "observations": "Centered threaded shaft, uniform pitch, connected wide sixteen-sided thumbwheel, and beveled tip are clearly visible.", "verdict": "pass"},
+    {"id": "front", "observations": "Centered threaded shaft, uniform pitch, connected 18 mm-tall eight-sided thumbwheel, and beveled tip are clearly visible.", "verdict": "pass"},
     {"id": "rear", "observations": "Rear elevation shows the expected helical lead transitions while preserving a continuous shaft core and pad joint.", "verdict": "pass"},
     {"id": "left", "observations": "Left elevation confirms uniform thread depth, full pad width, and a clean connected root.", "verdict": "pass"},
     {"id": "right", "observations": "Right elevation agrees with the left and shows no missing crests or unintended gaps.", "verdict": "pass"},
-    {"id": "top", "observations": "Top view shows a centered shaft within the regular sixteen-sided 40 mm thumbwheel.", "verdict": "pass"},
-    {"id": "bottom", "observations": "Bottom view shows one broad, uninterrupted, flat sixteen-sided contact face.", "verdict": "pass"},
+    {"id": "top", "observations": "Top view shows a centered shaft within the regular eight-sided 40 mm thumbwheel.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows one broad, uninterrupted, flat eight-sided contact face.", "verdict": "pass"},
     {"id": "isometric-front", "observations": "Front isometric resolves the hand pad chamfer, shaft overlap, continuous helix, and beveled tip.", "verdict": "pass"},
     {"id": "isometric-rear", "observations": "Rear isometric confirms the same connected body and normal helical start/end transitions.", "verdict": "pass"},
     {"id": "isometric-underside-front", "observations": "Underside front isometric confirms the broad uninterrupted contact face and continuous pad-to-shaft joint.", "verdict": "pass"},

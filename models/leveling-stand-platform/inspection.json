@@ -1,11 +1,11 @@
 {
-  "artifact_digest": "4150ccf5132909918aa7f78bf3956f8f10939b8132fd557ab3ca740cec9b28cd",
+  "artifact_digest": "d6ee6d69093752cf37ebf8a0aaa28d438e5fa0f36ea1d7c14b729732aa3b2047",
   "requirements": [
     {
       "confidence": 0.99,
-      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"],
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"],
       "id": "platform-shape",
-      "observations": "Top and upper isometrics show the central 150 mm load surface and all three outrigger top faces on one plane, with three intended through-thread exits. Bottom and both underside isometrics show matching threaded entrances, continuous thread paths, and arms joined to the disk and bosses. No detached features, clipping, or unintended geometry are visible.",
+      "observations": "All ten views show the central 150 mm load surface and all three outrigger top faces on one plane, with three intended through-thread exits. Bottom and both underside isometrics show matching threaded entrances, continuous thread paths, complete boss rims, and arms joined to the disk and bosses. The promoted 1.2 mm diametric clearance is a dimensional parameter rather than a visually measurable feature; the rendered holes remain open with no detached features, clipping, or unintended geometry.",
       "verdict": "pass"
     }
   ],

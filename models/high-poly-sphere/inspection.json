@@ -1,0 +1,79 @@
+{
+  "artifact_digest": "ed6b65535f99c5aa33dbe52ea43d3a6dce0f6bb8bf9a276852bfbc0275cece3a",
+  "requirements": [
+    {
+      "confidence": 1.0,
+      "evidence_views": [
+        "front",
+        "rear",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "isometric-front",
+        "isometric-rear",
+        "isometric-underside-front",
+        "isometric-underside-rear"
+      ],
+      "id": "spherical-form",
+      "observations": "All ten views show a complete, centered spherical silhouette with a dense, visually smooth tessellation; no clipping, holes, merged geometry, or unintended features are visible.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {
+    "kind": "agent"
+  },
+  "schema_version": 2,
+  "views": [
+    {
+      "id": "front",
+      "observations": "Centered circular silhouette; smooth dense surface shading; no clipping, holes, or unintended features.",
+      "verdict": "pass"
+    },
+    {
+      "id": "rear",
+      "observations": "Opposing rear view matches the front silhouette and proportions; complete and unclipped.",
+      "verdict": "pass"
+    },
+    {
+      "id": "left",
+      "observations": "Left profile is circular, centered, and visually smooth with no missing geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "right",
+      "observations": "Right profile agrees with the left view; silhouette is complete and unclipped.",
+      "verdict": "pass"
+    },
+    {
+      "id": "top",
+      "observations": "Top view shows a centered circular outline and regular radial tessellation without defects.",
+      "verdict": "pass"
+    },
+    {
+      "id": "bottom",
+      "observations": "Bottom view is complete and symmetric with the top view; the lower pole is present and unclipped.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-front",
+      "observations": "Upper front isometric shows a smooth sphere with consistent curvature and generous frame clearance.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-rear",
+      "observations": "Upper rear isometric agrees with the front isometric; no seams, holes, or distortion are visible.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-underside-front",
+      "observations": "Underside front isometric clearly shows the intact lower hemisphere and pole with no clipping or open surface.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-underside-rear",
+      "observations": "Underside rear isometric confirms a complete lower hemisphere and consistent opposing geometry.",
+      "verdict": "pass"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "artifact_digest": "3b59ad81e21f0872575b8f376b71df5460a02253b850249fa979a02699c0b562",
+  "requirements": [
+    {
+      "confidence": 0.98,
+      "evidence_views": [
+        "front",
+        "rear",
+        "left",
+        "right",
+        "top",
+        "bottom",
+        "isometric-front",
+        "isometric-rear",
+        "isometric-underside-front",
+        "isometric-underside-rear"
+      ],
+      "id": "intended-shape",
+      "observations": "The deep ring has a continuous 35 mm tunnel wall, clear circular bore, clean base junction, and two unobstructed mounting holes.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {
+    "kind": "agent"
+  },
+  "schema_version": 2,
+  "views": [
+    {
+      "id": "front",
+      "observations": "Front profile is centered and unclipped; all intended openings and support junctions are visible without stray geometry.",
+      "verdict": "pass"
+    },
+    {
+      "id": "rear",
+      "observations": "Rear profile matches the front silhouette and shows no missing, asymmetric, or detached features.",
+      "verdict": "pass"
+    },
+    {
+      "id": "left",
+      "observations": "Left side confirms the upright depth, base projection, and continuous attachment with no clipping.",
+      "verdict": "pass"
+    },
+    {
+      "id": "right",
+      "observations": "Right side matches the left depth profile and shows no unintended protrusions or gaps.",
+      "verdict": "pass"
+    },
+    {
+      "id": "top",
+      "observations": "Top view confirms the base footprint and upright alignment; visible voids remain open.",
+      "verdict": "pass"
+    },
+    {
+      "id": "bottom",
+      "observations": "Bottom view confirms a flat Z=0 footprint and both through-holes without hidden underside features.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-front",
+      "observations": "Front isometric shows coherent proportions, open flight paths, connected frame/support geometry, and clear mounting holes.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-rear",
+      "observations": "Rear isometric confirms the opposite faces and junctions are complete and consistent.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-underside-front",
+      "observations": "Front underside view confirms the base underside is flat and the through-holes remain open.",
+      "verdict": "pass"
+    },
+    {
+      "id": "isometric-underside-rear",
+      "observations": "Rear underside view confirms the opposite underside edges, base, and joints are complete.",
+      "verdict": "pass"
+    }
+  ]
+}

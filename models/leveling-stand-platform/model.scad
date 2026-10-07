@@ -18,7 +18,7 @@ thread_diameter = 18;
 thread_pitch = 2;
 thread_depth = thread_pitch / 2;
 socket_thread_length = boss_height;
-thread_clearance_diametric = 0.6;
+thread_clearance_diametric = 1.2;
 adjustment_travel = 6;
 minimum_engagement = 10;
 maximum_engagement = 16;
@@ -46,7 +46,7 @@ assert(maximum_engagement - minimum_engagement == adjustment_travel,
 assert(socket_thread_length == boss_height,
        "Each threaded socket must pass completely through its outrigger boss");
 assert(thread_clearance_diametric == 4 * $slop,
-       "BOSL2 internal-thread slop must produce 0.6 mm diametric clearance");
+       "BOSL2 internal-thread slop must produce 1.2 mm diametric clearance");
 assert(assembly_radius * 2 == 210 && thumbwheel_exposure == 30,
        "Outrigger wheels must form a 210 mm radial envelope and project 30 mm beyond the platform");
 echo("SCADCTL_REQUIREMENT:platform-parameters:PASS");

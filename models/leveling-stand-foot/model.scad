@@ -2,8 +2,8 @@ include <BOSL2/std.scad>
 include <BOSL2/threading.scad>
 
 pad_diameter = 40;
-pad_height = 6;
-pad_sides = 16;
+pad_height = 18;
+pad_sides = 8;
 pad_top_chamfer = 1;
 thread_diameter = 18;
 thread_length = 26;
@@ -21,6 +21,8 @@ assert(pad_diameter > thread_diameter,
        "The hand pad must be wider than the threaded shaft");
 assert(pad_top_chamfer > 0 && pad_top_chamfer < pad_height / 2,
        "The pad chamfer must fit within the pad height");
+assert(pad_height == 18 && pad_sides == 8,
+       "The calibrated thumbwheel must be 18 mm tall with eight broad sides");
 assert(joint_overlap > 0 && joint_overlap < pad_height,
        "The threaded shaft must overlap the pad to form one solid");
 assert(thread_length - joint_overlap >= maximum_engagement,

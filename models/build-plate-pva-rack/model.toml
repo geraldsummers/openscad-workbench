@@ -1,0 +1,72 @@
+schema_version = 2
+name = "build-plate-pva-rack"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [270.0, 270.0, 14.0]
+expected_extents_tolerance_mm = 0.01
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are exactly 270 x 270 x 14 mm"
+method = "mesh"
+kind = "extents"
+expected = [270.0, 270.0, 14.0]
+tolerance = 0.01
+
+[[requirements]]
+id = "ground-clearance"
+description = "The horizontal grid begins exactly 10 mm above the table"
+method = "source"
+
+[[requirements]]
+id = "open-clearance"
+description = "Representative cells remain open throughout the 10 mm space below the grid"
+method = "mesh"
+kind = "region"
+shape = "box"
+center = [70.0, 70.0, 5.0]
+size = [20.0, 20.0, 9.8]
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "triangular-lattice"
+description = "Three 5 mm rib families at 60 degree increments form a triangular lattice on a 45 mm cadence"
+method = "source"
+
+[[requirements]]
+id = "nine-foot-support"
+description = "Nine feet form a centered 3 x 3 support layout"
+method = "source"
+
+[[requirements]]
+id = "reinforced-attachments"
+description = "Each foot flares from a 28 mm table contact into a 42 mm deck attachment and matching support node"
+method = "source"
+
+[[requirements]]
+id = "center-support"
+description = "The center foot provides continuous solid support from the table to the grid"
+method = "mesh"
+kind = "region"
+shape = "box"
+center = [135.0, 135.0, 5.0]
+size = [20.0, 20.0, 9.8]
+expected = "solid"
+min_fraction = 0.999999
+
+[[requirements]]
+id = "flat-unobstructed-top"
+description = "All supporting top faces terminate at 14 mm with no raised locating features"
+method = "source"
+
+[[requirements]]
+id = "intended-shape"
+description = "The result is one square triangular-lattice deck with a complete perimeter, regular triangulation, nine broadly attached flared feet, and no unintended panels or raised features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

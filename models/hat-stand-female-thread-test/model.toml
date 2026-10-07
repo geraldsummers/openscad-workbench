@@ -1,0 +1,30 @@
+schema_version = 2
+name = "hat-stand-female-thread-test"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [40.0, 40.0, 24.0]
+expected_extents_tolerance_mm = 0.01
+
+[[requirements]]
+id = "overall-size"
+description = "Female thread test coupon envelope is 40 x 40 x 24 mm"
+method = "mesh"
+kind = "extents"
+expected = [40.0, 40.0, 24.0]
+tolerance = 0.01
+
+[[requirements]]
+id = "thread-test"
+description = "Named dimensions and corner radius obey their constraints"
+method = "source"
+
+[[requirements]]
+id = "coupon-shape"
+description = "The result is one upright rounded rectangular block without unintended features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

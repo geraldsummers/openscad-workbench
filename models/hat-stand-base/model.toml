@@ -1,0 +1,35 @@
+schema_version = 2
+name = "hat-stand-base"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [110.0, 110.0, 212.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 110 x 110 x 212 mm"
+method = "mesh"
+kind = "extents"
+expected = [110.0, 110.0, 212.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "base-parameters"
+description = "Base foot, upright post, and male thread parameters obey their constraints"
+method = "source"
+
+[[requirements]]
+id = "male-thread"
+description = "The centered male Tr24x3 thread uses the requested 99% diameter reduction"
+method = "source"
+
+[[requirements]]
+id = "base-shape"
+description = "The result is one connected round base with a circular plate, cylindrical column, and centered male thread"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

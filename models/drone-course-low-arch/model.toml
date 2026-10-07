@@ -1,0 +1,63 @@
+schema_version = 2
+name = "drone-course-low-arch"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [244.0, 32.0, 178.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 244 x 32 x 178 mm"
+method = "mesh"
+kind = "extents"
+expected = [244.0, 32.0, 178.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "parameters"
+description = "The 200 x 150 mm arch opening, frame, rail, and screw margins remain valid"
+method = "source"
+
+[[requirements]]
+id = "clear-opening"
+description = "The lower central flight passage remains unobstructed through the arch"
+method = "mesh"
+kind = "region"
+shape = "box"
+center = [0.0, 0.0, 40.0]
+size = [196.0, 7.8, 40.0]
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "mounting-holes"
+description = "Both 4.5 mm mounting holes pass through the base"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [-105.0, 0.0, 2.0]
+radius = 2.1
+height = 3.8
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "left-right-symmetry"
+description = "The arch and mounting rail are left-right symmetric"
+method = "mesh"
+kind = "symmetry"
+axis = "x"
+offset = 0.0
+max_difference_ratio = 0.000001
+
+[[requirements]]
+id = "intended-shape"
+description = "One low semicircular arch joins cleanly to a two-hole mounting rail"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

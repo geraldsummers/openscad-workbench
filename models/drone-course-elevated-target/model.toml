@@ -1,0 +1,65 @@
+schema_version = 2
+name = "drone-course-elevated-target"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [220.0, 32.0, 237.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 220 x 32 x 237 mm"
+method = "mesh"
+kind = "extents"
+expected = [220.0, 32.0, 237.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "parameters"
+description = "The 160 mm elevated opening, splayed supports, rail, and screw margins remain valid"
+method = "source"
+
+[[requirements]]
+id = "clear-opening"
+description = "The 160 mm circular flight target remains unobstructed through the frame"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 145.0]
+radius = 79.0
+height = 7.8
+axis = "y"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "mounting-holes"
+description = "Both 4.5 mm mounting holes pass through the base"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [-90.0, 0.0, 2.0]
+radius = 2.1
+height = 3.8
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "left-right-symmetry"
+description = "The elevated target and splayed supports are left-right symmetric"
+method = "mesh"
+kind = "symmetry"
+axis = "x"
+offset = 0.0
+max_difference_ratio = 0.000001
+
+[[requirements]]
+id = "intended-shape"
+description = "One elevated round target is supported by two clean splayed legs on a mounting rail"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

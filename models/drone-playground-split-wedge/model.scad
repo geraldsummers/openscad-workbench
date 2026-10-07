@@ -1,0 +1,3 @@
+wedge_length=180; wedge_width=90; wedge_height=180; base_thickness=4; mount_hole_diameter=4.5;
+module split_wedge(){ difference(){ union(){ translate([-wedge_length/2,-wedge_width/2,0]) cube([wedge_length,wedge_width,base_thickness]); hull(){ translate([-wedge_length/2+8,-wedge_width/2+8,base_thickness]) cube([wedge_length-16,wedge_width-16,3]); translate([-8,-10,wedge_height-10]) cube([16,20,10]); } for(x=[-72,72]) translate([x,0,base_thickness]) cylinder(d=18,h=12,$fn=32); } for(x=[-72,72]) translate([x,0,-1]) cylinder(d=mount_hole_diameter,h=18,$fn=24); }}
+assert(wedge_height==180 && wedge_length==180); echo("SCADCTL_REQUIREMENT:parameters:PASS"); split_wedge();

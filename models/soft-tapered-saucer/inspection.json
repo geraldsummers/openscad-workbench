@@ -1,0 +1,26 @@
+{
+  "artifact_digest": "1a49b267502bf4883aa5212129e5b903a3c3ac42072668a172d91c3ee850bb4a",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"],
+      "id": "intended-shape",
+      "observations": "All ten original-resolution views show one compact low rounded catch basin with a continuous outer wall, four diagonal circular support pads, and a centered locating ring interrupted by four evenly spaced runoff channels. The narrowed rim remains continuous around the ring, the underside is flat and uninterrupted, and opposing views agree without clipping, fragments, unintended holes, or distorted proportions.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "Front elevation shows the low 18 mm profile, softened upper and lower edges, and a level stable base.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear elevation matches the front with a continuous circular wall and unclipped silhouette.", "verdict": "pass"},
+    {"id": "left", "observations": "Left elevation confirms the uniform basin wall height and clean rounded transitions.", "verdict": "pass"},
+    {"id": "right", "observations": "Right elevation agrees with the left and contains no protrusions or missing wall segments.", "verdict": "pass"},
+    {"id": "top", "observations": "Direct top projection confirms a centered, compact circular footprint; upper isometrics resolve the four pads, four locating-ring channels, and the narrow continuous basin margin.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows one uninterrupted circular contact surface without holes or detached features.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Front isometric clearly resolves the compact catch basin, four diagonal supports, broken locating ring, open runoff paths, and continuous narrow rim clearance.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Rear isometric confirms all four ring arcs and supports are connected to the basin floor with symmetric spacing.", "verdict": "pass"},
+    {"id": "isometric-underside-front", "observations": "Underside front isometric shows the broad flat base and continuous rounded perimeter without recesses or fragments.", "verdict": "pass"},
+    {"id": "isometric-underside-rear", "observations": "Opposing underside view confirms the same uninterrupted contact face and clean outer transition.", "verdict": "pass"}
+  ]
+}

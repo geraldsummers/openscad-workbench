@@ -1,0 +1,53 @@
+schema_version = 2
+name = "soft-tapered-planter"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [168.0, 168.0, 145.0]
+expected_extents_tolerance_mm = 0.02
+
+[[requirements]]
+id = "overall-size"
+description = "Overall planter dimensions including the outward scallops are 168 x 168 x 145 mm"
+method = "mesh"
+kind = "extents"
+expected = [168.0, 168.0, 145.0]
+tolerance = 0.02
+
+[[requirements]]
+id = "planter-parameters"
+description = "The planter has a 126 mm base, outward taper, 3 mm side wall, and 4 mm floor"
+method = "source"
+
+[[requirements]]
+id = "drainage-pattern"
+description = "One central and four surrounding 8 mm drainage holes remain inside the cavity floor"
+method = "source"
+
+[[requirements]]
+id = "scalloped-rim"
+description = "The planter has twelve lobes that ease in from one third of the planter height below the top and reach 4 mm extensions"
+method = "source"
+
+[[requirements]]
+id = "open-center-drain"
+description = "The central drainage hole passes completely through the floor"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 2.0]
+radius = 3.8
+height = 3.8
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "intended-shape"
+description = "The planter is an upright, open, smooth tapered vessel with a continuous outward-lobed scalloped perimeter and five clean drainage openings"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

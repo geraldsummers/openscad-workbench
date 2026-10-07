@@ -1,0 +1,3 @@
+clear_width=200; clear_height=120; roof_width=220; roof_depth=90; post=12; base_thickness=4; mount_hole_diameter=4.5;
+module over_under_bridge(){ difference(){ union(){ translate([-122,-roof_depth/2,0]) cube([244,roof_depth,base_thickness]); for(x=[-clear_width/2-post,clear_width/2]) translate([x,-roof_depth/2,0]) cube([post,roof_depth,clear_height+8]); translate([-roof_width/2,-roof_depth/2,clear_height]) cube([roof_width,roof_depth,8]); for(x=[-80,80]) translate([x,0,base_thickness]) cylinder(d=18,h=12,$fn=32); } for(x=[-80,80]) translate([x,0,-1]) cylinder(d=mount_hole_diameter,h=18,$fn=24); }}
+assert(clear_width==200 && clear_height==120 && roof_width==220); echo("SCADCTL_REQUIREMENT:parameters:PASS"); over_under_bridge();

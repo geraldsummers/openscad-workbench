@@ -1,0 +1,8 @@
+{
+  "artifact_digest": "e068327695b5ad576cee2b80d6449bddb9338d1c9837c10a3bbc96014f013828",
+  "requirements": [{"id":"top-shape","observations":"All views show one connected T-shaped top perch with a short centered socket and smaller rounded crossbar.","verdict":"pass","confidence":0.95,"evidence_views":["front","rear","left","right","top","bottom","isometric-front","isometric-rear","isometric-underside-front","isometric-underside-rear"]}],
+  "reviewer":{"kind":"agent"},"schema_version":2,
+  "views":[
+    {"id":"front","observations":"Top T silhouette is centered and clean.","verdict":"pass"},{"id":"rear","observations":"Rear matches front.","verdict":"pass"},{"id":"left","observations":"Side confirms the socket block is continuous with the perch.","verdict":"pass"},{"id":"right","observations":"Opposite side matches left.","verdict":"pass"},{"id":"top","observations":"Rounded perch footprint is symmetric.","verdict":"pass"},{"id":"bottom","observations":"Female threaded socket is visibly open and concentric.","verdict":"pass"},{"id":"isometric-front","observations":"Rounded perch, socket walls, and thread entrance are resolved.","verdict":"pass"},{"id":"isometric-rear","observations":"Rear isometric confirms one solid without unintended openings.","verdict":"pass"},{"id":"isometric-underside-front","observations":"Underside clearly shows the female thread and continuous perch.","verdict":"pass"},{"id":"isometric-underside-rear","observations":"Opposite underside confirms a clean socket and solid walls.","verdict":"pass"}
+  ]
+}

@@ -7,20 +7,20 @@ units = "mm"
 connected_components = 1
 max_extents_mm = [270.0, 270.0, 256.0]
 z0_tolerance_mm = 0.01
-expected_extents_mm = [40.0, 40.0, 31.0]
+expected_extents_mm = [40.0, 40.0, 43.0]
 expected_extents_tolerance_mm = 0.05
 
 [[requirements]]
 id = "overall-size"
-description = "The leveling foot is 40 x 40 x 31 mm"
+description = "The leveling foot is 40 x 40 x 43 mm"
 method = "mesh"
 kind = "extents"
-expected = [40.0, 40.0, 31.0]
+expected = [40.0, 40.0, 43.0]
 tolerance = 0.05
 
 [[requirements]]
 id = "foot-parameters"
-description = "The pad, threaded shaft, connected overlap, engagement limits, and 6 mm travel obey their declared constraints"
+description = "The 18 mm-tall eight-sided thumbwheel, threaded shaft, connected overlap, engagement limits, and 6 mm travel obey their declared constraints"
 method = "source"
 
 [[requirements]]
@@ -49,6 +49,6 @@ views = ["front", "rear", "left", "right", "isometric-front", "isometric-rear"]
 
 [[requirements]]
 id = "foot-shape"
-description = "The part is one leveling foot with a broad flat sixteen-sided side-access thumbwheel, connected shaft, and beveled thread tip"
+description = "The part is one leveling foot with a broad flat eight-sided 18 mm-tall side-access thumbwheel, connected shaft, and beveled thread tip"
 method = "visual"
-views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear"]
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

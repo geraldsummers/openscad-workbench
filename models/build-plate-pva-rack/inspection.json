@@ -1,0 +1,26 @@
+{
+  "artifact_digest": "6df6f4ef2e582e34bc5b833a005e68bbcae1de5c43b47bc7ed604566c5bb64e3",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"],
+      "id": "intended-shape",
+      "observations": "All ten views show one complete square perimeter surrounding a regular three-direction triangular lattice. Top and upper isometrics show repeated triangular cells, broad full-thickness support nodes, and no features raised above the coplanar Z=14 support plane. Bottom and both underside isometrics resolve all nine feet flaring continuously from smaller table contacts into the 42 mm attachment nodes at the corners, edge centers, and rack center. Opposing views are consistent and show no clipping, missing ribs, narrow necks at the feet, unintended panels, detached pieces, or faceting artifacts.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "The deck remains level while three visible feet widen continuously toward the deck, creating broad attachments and two clear under-rack spans; the silhouette is complete and unclipped.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear elevation matches the front with three symmetric tapered supports, broad upper joints, and unobstructed gaps between them.", "verdict": "pass"},
+    {"id": "left", "observations": "Left elevation confirms the same 14 mm overall profile and continuous flare from each smaller table contact into the deck.", "verdict": "pass"},
+    {"id": "right", "observations": "Right elevation agrees with the left and shows no narrow attachment necks, missing feet, sagging members, or clipping.", "verdict": "pass"},
+    {"id": "top", "observations": "Three evenly spaced rib families form repeated triangular cells within the full perimeter; nine square support nodes remain flush with the lattice top and introduce no raised stops.", "verdict": "pass"},
+    {"id": "bottom", "observations": "The underside projection clearly shows nine smaller table-contact faces centered below larger attachment nodes, with triangular openings preserved between supports.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Front isometric clearly resolves the triangulated deck, broad flush support nodes, large open cells, and tapered feet attached beneath the nodes.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Rear isometric confirms matching triangular cadence and broad node placement from the opposing upper angle, with no unintended panels or raised features.", "verdict": "pass"},
+    {"id": "isometric-underside-front", "observations": "Underside front isometric resolves all nine feet flaring into full 42 mm nodes, continuous lattice-to-frame joints, and substantial open clearance between supports.", "verdict": "pass"},
+    {"id": "isometric-underside-rear", "observations": "Opposing underside view confirms the symmetric 3 x 3 tapered-foot layout, consistent height, broad attachments, and absence of hidden fragments.", "verdict": "pass"}
+  ]
+}

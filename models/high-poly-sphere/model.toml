@@ -1,0 +1,35 @@
+schema_version = 2
+name = "high-poly-sphere"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [50.0, 50.0, 50.0]
+expected_extents_tolerance_mm = 0.01
+
+[[requirements]]
+id = "overall-diameter"
+description = "Overall mesh extents are 50 x 50 x 50 mm"
+method = "mesh"
+kind = "extents"
+expected = [50.0, 50.0, 50.0]
+tolerance = 0.01
+
+[[requirements]]
+id = "positive-diameter"
+description = "The named diameter is positive"
+method = "source"
+
+[[requirements]]
+id = "high-poly"
+description = "The sphere uses at least 192 facets, divisible by four for symmetric extrema"
+method = "source"
+
+[[requirements]]
+id = "spherical-form"
+description = "The result is a smooth, complete sphere without clipping, holes, or unintended features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

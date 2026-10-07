@@ -1,0 +1,3 @@
+tower_height=220; base_size=140; post_diameter=20; flag_radius=62; mount_hole_diameter=4.5;
+module orbit_tower(){ difference(){ union(){ translate([-base_size/2,-base_size/2,0]) cube([base_size,base_size,4]); cylinder(d=post_diameter,h=tower_height,$fn=48); cylinder(d1=64,d2=post_diameter,h=34,$fn=48); for(i=[0:2]) rotate([0,0,i*120]) translate([0,-6,70+i*55]) { cube([flag_radius,12,9]); translate([flag_radius-8,-7,-10]) cube([8,26,29]); } } for(x=[-55,55],y=[-55,55]) translate([x,y,-1]) cylinder(d=mount_hole_diameter,h=7,$fn=24); }}
+assert(tower_height==220 && flag_radius>base_size/3); echo("SCADCTL_REQUIREMENT:parameters:PASS"); orbit_tower();

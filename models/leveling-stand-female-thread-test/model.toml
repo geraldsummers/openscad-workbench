@@ -1,0 +1,61 @@
+schema_version = 2
+name = "leveling-stand-female-thread-test"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [30.0, 30.0, 20.0]
+expected_extents_tolerance_mm = 0.02
+
+[[requirements]]
+id = "overall-size"
+description = "The test coupon matches one 30 mm diameter by 20 mm platform outrigger boss"
+method = "mesh"
+kind = "extents"
+expected = [30.0, 30.0, 20.0]
+tolerance = 0.02
+
+[[requirements]]
+id = "coupon-parameters"
+description = "The coupon uses the next Tr18x2 internal-thread candidate with 1.2 mm diametric clearance and BOSL2 slop 0.30"
+method = "source"
+
+[[requirements]]
+id = "through-thread"
+description = "The female thread passes through the full 20 mm coupon height"
+method = "source"
+
+[[requirements]]
+id = "open-bottom"
+description = "The threaded socket has a clear entrance through the coupon bottom"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 0.5]
+radius = 7.0
+height = 0.8
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "open-top"
+description = "The threaded socket exits through the coupon top"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 19.5]
+radius = 7.0
+height = 0.8
+axis = "z"
+expected = "void"
+max_fraction = 0.000001
+
+[[requirements]]
+id = "coupon-shape"
+description = "The part is one compact cylindrical female-thread coupon with an open continuous socket and no unintended features"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

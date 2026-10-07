@@ -1,0 +1,58 @@
+schema_version = 2
+name = "soft-tapered-saucer"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [142.0, 142.0, 18.0]
+expected_extents_tolerance_mm = 0.02
+
+[[requirements]]
+id = "overall-size"
+description = "Overall saucer dimensions are 142 x 142 x 18 mm"
+method = "mesh"
+kind = "extents"
+expected = [142.0, 142.0, 18.0]
+tolerance = 0.02
+
+[[requirements]]
+id = "saucer-parameters"
+description = "The saucer has a 3 mm floor, 3 mm wall, and 15 mm usable basin depth"
+method = "source"
+
+[[requirements]]
+id = "mating-clearance"
+description = "The 129 mm locating opening gives the 126 mm planter base 1.5 mm radial clearance"
+method = "source"
+
+[[requirements]]
+id = "compact-footprint"
+description = "The saucer extends only 8 mm radially beyond the 126 mm planter base"
+method = "source"
+
+[[requirements]]
+id = "raised-seat"
+description = "Four supports raise the planter 2 mm above the basin floor and four ring breaks pass runoff outward"
+method = "source"
+
+[[requirements]]
+id = "solid-center-floor"
+description = "The central basin floor remains solid and continuous"
+method = "mesh"
+kind = "region"
+shape = "cylinder"
+center = [0.0, 0.0, 1.5]
+radius = 8.0
+height = 2.8
+axis = "z"
+expected = "solid"
+min_fraction = 0.999
+
+[[requirements]]
+id = "intended-shape"
+description = "The saucer is a low rounded catch basin with four diagonal supports and a centered four-channel locating ring"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

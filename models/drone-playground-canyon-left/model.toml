@@ -1,0 +1,20 @@
+schema_version = 2
+name = "drone-playground-canyon-left"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+
+[[requirements]]
+id = "parameters"
+description = "Named design dimensions and interface relationships are valid"
+method = "source"
+
+[[requirements]]
+id = "intended-shape"
+description = "The part is a coherent, printable obstacle component with the intended openings and interfaces"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]

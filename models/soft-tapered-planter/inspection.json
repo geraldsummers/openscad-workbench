@@ -1,0 +1,26 @@
+{
+  "artifact_digest": "1c90479803965e5653ea49dc3dc8fab6f0c6be256345643206ebeb06658f9ef1",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"],
+      "id": "intended-shape",
+      "observations": "All ten views show one upright, open, smoothly tapered vessel whose twelve outward lobes begin subtly 48.33 mm below the top and increase with a smooth eased transition through the upper third. The lobes reach their full 4 mm extension at the rim without cut-in notches or a projecting flange. The planting cavity remains circular and unobstructed, the 288-segment loft gives consistent fine faceting, and the underside retains exactly five clean drainage openings. Opposing views agree without clipping, fragments, unintended holes, or merged features.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "Front elevation shows subtle modulation beginning at the upper-third boundary and growing smoothly into outward rim peaks, with no abrupt band and a stable flat base.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear elevation matches the front and confirms the scallops ease gradually into the body without cut-in notches.", "verdict": "pass"},
+    {"id": "left", "observations": "Left elevation confirms the smooth upper-third fade, outward rim extension, full body height, and continuous wall.", "verdict": "pass"},
+    {"id": "right", "observations": "Right elevation agrees with the left and contains no abrupt transition, missing, or detached scallop segments.", "verdict": "pass"},
+    {"id": "top", "observations": "Top view clearly shows twelve smooth outward lobes around the full perimeter, a circular inner opening, and the unchanged five-hole drainage pattern.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows the circular flat base and exactly five clean through-openings; the gradual scallop growth does not disturb the lower body.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Front isometric resolves the twelve lobes emerging continuously through the upper third and angling outward toward the rim, with a circular cavity and smooth body taper.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Rear isometric confirms the eased twelve-lobe treatment wraps consistently around the complete perimeter and reaches full depth only at the rim.", "verdict": "pass"},
+    {"id": "isometric-underside-front", "observations": "Underside front isometric confirms the gradual upper-wall extensions are connected into the body and all five drainage holes pass through the floor.", "verdict": "pass"},
+    {"id": "isometric-underside-rear", "observations": "Opposing underside view confirms the same continuous upper-third fade, clean base edge, and absence of detached geometry.", "verdict": "pass"}
+  ]
+}

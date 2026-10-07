@@ -1,0 +1,3 @@
+platform_diameter=140; landing_height=100; platform_thickness=8; base_length=120; base_depth=70; mount_hole_diameter=4.5;
+module bullseye_pedestal(){ difference(){ union(){ translate([-base_length/2,-base_depth/2,0]) cube([base_length,base_depth,4]); cylinder(d1=54,d2=24,h=landing_height,$fn=48); translate([0,0,landing_height]) cylinder(d=platform_diameter,h=platform_thickness,$fn=96); translate([0,0,landing_height+platform_thickness]) cylinder(d=70,h=1,$fn=64); translate([0,0,landing_height+platform_thickness+1]) cylinder(d=28,h=1,$fn=48); } for(x=[-48,48]) translate([x,0,-1]) cylinder(d=mount_hole_diameter,h=7,$fn=24); }}
+assert(platform_diameter==140 && landing_height==100); echo("SCADCTL_REQUIREMENT:parameters:PASS"); bullseye_pedestal();

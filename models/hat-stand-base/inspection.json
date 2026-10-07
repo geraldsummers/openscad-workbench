@@ -1,0 +1,8 @@
+{
+  "artifact_digest": "e6069589545ee15daa29141c85264ab02acf570ac8f2f24a3c0efffff1c90e39",
+  "requirements": [{"id":"base-shape","observations":"All views show one connected T-shaped base: a broad rounded foot, centered square post, and centered male threaded end.","verdict":"pass","confidence":0.95,"evidence_views":["front","rear","left","right","top","bottom","isometric-front","isometric-rear","isometric-underside-front","isometric-underside-rear"]}],
+  "reviewer":{"kind":"agent"},"schema_version":2,
+  "views":[
+    {"id":"front","observations":"Broad foot and centered upright post with male thread are clear.","verdict":"pass"},{"id":"rear","observations":"Rear matches front with no stray geometry.","verdict":"pass"},{"id":"left","observations":"Side confirms continuous post and grounded foot.","verdict":"pass"},{"id":"right","observations":"Opposite side matches left.","verdict":"pass"},{"id":"top","observations":"Foot and post are centered; thread is concentric.","verdict":"pass"},{"id":"bottom","observations":"Foot underside is flat and uninterrupted.","verdict":"pass"},{"id":"isometric-front","observations":"Rounded foot, post transitions, and coarse male thread are resolved.","verdict":"pass"},{"id":"isometric-rear","observations":"Rear isometric confirms one solid and clean corners.","verdict":"pass"},{"id":"isometric-underside-front","observations":"Underside shows a broad stable foot with no holes or fragments.","verdict":"pass"},{"id":"isometric-underside-rear","observations":"Opposite underside confirms the same continuous solid.","verdict":"pass"}
+  ]
+}

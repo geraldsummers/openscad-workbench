@@ -1,0 +1,26 @@
+{
+  "artifact_digest": "5119ac97ad1625fb0ef1c77fb2fcca9cbda8696a21453a5a91a344dfdab6011d",
+  "requirements": [
+    {
+      "confidence": 0.99,
+      "evidence_views": ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"],
+      "id": "coupon-shape",
+      "observations": "All ten views agree on one compact cylindrical coupon. Top, bottom, and all four isometrics show an open centered socket; opposing upper and underside isometrics resolve a continuous internal helix through the full height. The revised 1.2 mm clearance is source-verified rather than visually measurable. The outer wall is uninterrupted, both end faces retain complete annular rims, and no clipping, fragments, or unintended holes are visible.",
+      "verdict": "pass"
+    }
+  ],
+  "reviewer": {"kind": "agent"},
+  "schema_version": 2,
+  "views": [
+    {"id": "front", "observations": "Front elevation shows the full 20 mm cylindrical wall with level top and bottom edges and no exterior defects.", "verdict": "pass"},
+    {"id": "rear", "observations": "Rear elevation matches the front and confirms a continuous exterior wall.", "verdict": "pass"},
+    {"id": "left", "observations": "Left elevation confirms the intended cylindrical envelope and flat end planes.", "verdict": "pass"},
+    {"id": "right", "observations": "Right elevation agrees with the left without clipping or stray geometry.", "verdict": "pass"},
+    {"id": "top", "observations": "Top view shows a centered open socket surrounded by a complete annular rim.", "verdict": "pass"},
+    {"id": "bottom", "observations": "Bottom view shows the matching open entrance, entry bevel, and complete annular rim.", "verdict": "pass"},
+    {"id": "isometric-front", "observations": "Front upper isometric clearly resolves the continuous internal trapezoidal helix and open passage.", "verdict": "pass"},
+    {"id": "isometric-rear", "observations": "Rear upper isometric confirms the same uninterrupted thread path and connected exterior body.", "verdict": "pass"},
+    {"id": "isometric-underside-front", "observations": "Front underside isometric shows the beveled entrance and continuous thread extending upward through the coupon.", "verdict": "pass"},
+    {"id": "isometric-underside-rear", "observations": "Rear underside isometric confirms the through opening and shows no hidden fragments or wall breaks.", "verdict": "pass"}
+  ]
+}

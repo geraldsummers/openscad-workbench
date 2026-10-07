@@ -1,0 +1,35 @@
+schema_version = 2
+name = "hat-stand-top"
+source = "model.scad"
+units = "mm"
+
+[geometry]
+connected_components = 1
+max_extents_mm = [270.0, 270.0, 256.0]
+z0_tolerance_mm = 0.01
+expected_extents_mm = [80.0, 80.0, 48.0]
+expected_extents_tolerance_mm = 0.05
+
+[[requirements]]
+id = "overall-size"
+description = "Overall dimensions are 80 x 80 x 48 mm"
+method = "mesh"
+kind = "extents"
+expected = [80.0, 80.0, 48.0]
+tolerance = 0.05
+
+[[requirements]]
+id = "top-parameters"
+description = "Top perch, socket, and female thread parameters obey their constraints"
+method = "source"
+
+[[requirements]]
+id = "female-thread"
+description = "The centered female Tr24x3 thread is present"
+method = "source"
+
+[[requirements]]
+id = "top-shape"
+description = "The result is one connected round top with a circular plate, cylindrical column, and centered female thread"
+method = "visual"
+views = ["front", "rear", "left", "right", "top", "bottom", "isometric-front", "isometric-rear", "isometric-underside-front", "isometric-underside-rear"]
