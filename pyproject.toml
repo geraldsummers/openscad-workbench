@@ -14,7 +14,7 @@ dependencies = [
   "manifold3d==3.5.4",
   "networkx==3.7",
   "numpy==2.5.2",
-  "pillow==12.3.0",
+  "pillow==13.0.0",
   "scipy==1.18.1",
   "trimesh==5.1.0",
 ]
