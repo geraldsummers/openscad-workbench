@@ -20,7 +20,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-test = ["pytest==9.1.1"]
+test = ["pytest==9.2.0"]
 
 [project.urls]
 Homepage = "https://github.com/geraldsummers/openscad-workbench"
